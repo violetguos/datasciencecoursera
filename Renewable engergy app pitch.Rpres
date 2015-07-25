@@ -1,0 +1,78 @@
+Analysis of Renewable Engergy Generation Worldwide 
+========================================================
+author: Violet Yue Guo
+date: July 20, 2015
+transition: rotate
+font-family: 'Helvetica'
+css: cus.css
+
+Why did I choose this particular topic?
+========================================================
+transition: rotate
+#type: cus
+
+The application is built to address the following problem
+
+- Renewable energy(electricity) generation
+- How it changed from 2008 to 2012
+- This pitch presentation is built for my R application "Reusable Energy Generation Worldwide from 2008 to 2012 (Billion Kilowatthours)"
+- Contact me at violetyueguo.branded.me
+- Comments and critques are welcomed :)
+
+
+
+Data Source
+========================================================
+transition: rotate
+#type: cus
+
+This following .csv data file was found on an American goverenment departmental website for public, open data.
+
+- Below shows the sample energy data of Canada
+
+```{r, echo=FALSE}
+
+energy<- read.csv("TotalRenewableElectricity copy.csv")
+subset(energy, Country.Name== "Canada")
+```
+
+
+Plot
+========================================================
+transition: rotate
+type: cus
+
+Plotting the energy generation change. (Example country: Canada)
+
+Renewable Energy Generation in Canada 
+```{r, echo=FALSE }
+library(googleVis)
+library(devtools)
+library(ggplot2)
+
+
+ #select the energy data of Canada
+countriesData<-read.csv("TotalRenewableElectricity copy.csv")
+data <-subset(countriesData, Country.Name="Canada")
+
+#plot a diagram
+plot(x=c(2008,2009,2010,2011,2012), y=c(384.587,379.476,366.247, 398.286, 397.344))
+  
+```
+
+Data Anaylsis
+========================================================
+
+- If you animate the map in the app, the colours do not change too much.
+
+- Take away lesson: SLOW IMPROVEMENT in renweable energy in the world!
+
+- Coloured map may not be the best way to illustrate subtle change
+  - Options: line plot, histogram, etc
+
+- Is it the best practice to look at renewable energy generation of a whole country?
+  - Options: renewable energy generation per capita
+
+
+
+
